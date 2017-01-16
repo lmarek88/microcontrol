@@ -23,10 +23,20 @@ footer{
     background-color: gray;
 }
 
+.main-color{
+    color:rgb(3, 60, 115);
+}
 .navbar{
     margin-bottom: 0 !important;
 }
 
+.navbar-brand{
+    padding: 1px 0 !important;
+}
+
+.navbar-brand img{
+    height: 100%;
+}
 #gallery{
     display:none;
 }
@@ -35,25 +45,25 @@ footer{
 #gallery .panel .panel-body { position: relative; padding: 0 !important; overflow: hidden; height: auto; }
 #gallery .panel .panel-body a { overflow: hidden; }
 #gallery .panel .panel-body a img { display: block; margin: 0; width: 100%; height: 200px; 
-    transition: all 0.5s; 
-    -moz-transition: all 0.5s; 
-    -webkit-transition: all 0.5s; 
-    -o-transition: all 0.5s; 
+                                    transition: all 0.5s; 
+                                    -moz-transition: all 0.5s; 
+                                    -webkit-transition: all 0.5s; 
+                                    -o-transition: all 0.5s; 
 }
 #gallery .panel .panel-body a.zoom:hover img { transform: scale(1.3); -ms-transform: scale(1.3); -webkit-transform: scale(1.3); -o-transform: scale(1.3); -moz-transform: scale(1.3); }
 #gallery .panel .panel-body a.zoom span.overlay { position: absolute; top: 0; left: 0; visibility: hidden; height: 100%; width: 100%; background-color: #000; opacity: 0; 
-    transition: opacity .25s ease-out;
-    -moz-transition: opacity .25s ease-out;
-    -webkit-transition: opacity .25s ease-out;
-    -o-transition: opacity .25s ease-out;
+                                                  transition: opacity .25s ease-out;
+                                                  -moz-transition: opacity .25s ease-out;
+                                                  -webkit-transition: opacity .25s ease-out;
+                                                  -o-transition: opacity .25s ease-out;
 }     
 #gallery .panel .panel-body a.zoom:hover span.overlay { display: block; visibility: visible; opacity: 0.55; -moz-opacity: 0.55; -webkit-opacity: 0.55; filter: alpha(opacity=65); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)"; }  
 #gallery .panel .panel-body a.zoom:hover span.overlay i { position: absolute; top: 45%; left: 0%; width: 100%; font-size: 2.25em; color: #fff !important; text-align: center;
-    opacity: 1;
-    -moz-opacity: 1;
-    -webkit-opacity: 1;
-    filter: alpha(opacity=1);    
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+                                                          opacity: 1;
+                                                          -moz-opacity: 1;
+                                                          -webkit-opacity: 1;
+                                                          filter: alpha(opacity=1);    
+                                                          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
 }
 
 #contact{
@@ -102,4 +112,11 @@ footer{
     height: 100% !important;
     max-width: 100% !important; /*img width*/
     margin: 0 auto !important;
+}
+
+#contact h2,
+#contact h3,
+#contact h4,
+#contact h5{
+    color: rgb(3, 60, 115);
 }
