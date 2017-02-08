@@ -1,4 +1,4 @@
-﻿var _app = _app || {};
+var _app = _app || {};
 (function () {
     var template = '<div class="col-lg-3 col-xs-4">{{:name}}</div>';
     var images = [{

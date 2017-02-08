@@ -1,4 +1,4 @@
-﻿body {
+ď»żbody {
     overflow: hidden;
 }
 
@@ -23,11 +23,42 @@ footer{
     background-color: gray;
 }
 
+
+.work-areas{
+    
+}
+
+h1, h2, h3{
+    color: black !important;
+}
+
+.work-areas h1,
+.work-areas h2,
+.work-areas h3,
+.work-areas h4{
+    color: black !important;
+}
+
+.work-areas img{
+    height: 250px;
+    width: 350px;
+    margin: auto;
+}
+
+.work-areas .text{
+    padding: 10px 5px;
+    text-align: justify;
+}
+
 .main-color{
     color:rgb(3, 60, 115);
 }
 .navbar{
     margin-bottom: 0 !important;
+}
+
+.navbar-brand img{
+    margin-right: 40px;
 }
 
 .navbar-brand{
@@ -94,6 +125,10 @@ footer{
 #image-carousel button.close{
     position: absolute;
     right: 10px;
+    z-index: 1000;
+    color: black;
+    font-size: 30px;
+    opacity: 0.8 !important;
     top: 10px;
 }
 
@@ -119,4 +154,46 @@ footer{
 #contact h4,
 #contact h5{
     color: rgb(3, 60, 115);
+}
+
+
+.references-conainer .center-container{
+    text-align: center;
+}
+
+.references-conainer .reference-item{
+    max-width: 770px;
+    margin: auto;
+    min-height: 70px;
+}
+
+.references-conainer .reference-item img{
+    width: 80px;
+    margin: auto;
+}
+
+.reference-item .text-container{
+    display: table;
+    min-height: 70px;
+}
+
+.reference-item .text-container .text{
+    display: table-cell;
+     vertical-align: middle;
+}
+
+.reference-item .action-container{
+    display: table;
+     min-height: 70px;
+    
+}
+
+.reference-item .action-container .icons{
+    display: table-cell;
+     vertical-align: middle;
+}
+.reference-item .action-container .icons .ico{
+    font-size: 30px;
+    padding-left: 10px;
+    cursor: pointer;
 }
