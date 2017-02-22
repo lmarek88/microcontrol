@@ -41,7 +41,7 @@ var _app = _app || {};
 //            $('.screen').hide();
 //            $('#' + id).show();
         });
-        $('.navbar-nav li[data-id="refrences"]').trigger('click');
+        $('.navbar-nav li[data-id="main"]').trigger('click');
     }
 
     var setActiveContent = function (id) {

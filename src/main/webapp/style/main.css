@@ -1,4 +1,4 @@
-ď»żbody {
+body {
     overflow: hidden;
 }
 
@@ -48,6 +48,8 @@ h1, h2, h3{
 .work-areas .text{
     padding: 10px 5px;
     text-align: justify;
+    max-width: 450px;
+    margin: auto;
 }
 
 .main-color{
@@ -149,11 +151,19 @@ h1, h2, h3{
     margin: 0 auto !important;
 }
 
+
+.contact-logo img{
+    margin: auto;
+}
+.contact-container{
+    text-align: center;
+    padding-top: 10px;
+}
 #contact h2,
 #contact h3,
 #contact h4,
 #contact h5{
-    color: rgb(3, 60, 115);
+    color: rgb(3, 60, 115) !important;
 }
 
 
@@ -196,4 +206,35 @@ h1, h2, h3{
     font-size: 30px;
     padding-left: 10px;
     cursor: pointer;
+}
+
+#slider{
+    height: 200px;
+    max-height: 400px;
+    margin-bottom: 10px;
+}
+
+.slick-slide{
+    height: 200px !important; 
+    max-height: 400px;
+    outline: none;
+}
+
+.slider-item{
+    text-align: center;
+}
+.slider-item .slider-header{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.slider-item img{
+    display: inline-block !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+}
+.slick-prev:before, .slick-next:before { 
+   color:rgb(3, 60, 115) !important;
+   font-size: 30px !important;
 }
