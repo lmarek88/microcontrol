@@ -5,9 +5,9 @@
  */
 package com.codemark.services;
 
-import com.codemark.application.dto.GalleryCategory;
-import com.codemark.application.dto.GalleryData;
-import com.codemark.application.dto.Image;
+import com.codemark.webui.dto.GalleryCategory;
+import com.codemark.webui.dto.GalleryData;
+import com.codemark.webui.dto.Image;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codemark.application;
+package com.codemark.webui;
 
 import com.codemark.services.GalleryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Lukasz
  */
 @RestController
-public class MainController {
+public class GalleryController {
     
     @Autowired
     GalleryService galleryService;

@@ -1,0 +1,36 @@
+#references{
+  display: none;
+}
+
+.references-conainer .center-container {
+  text-align: center; }
+
+.references-conainer .reference-item {
+  max-width: 770px;
+  margin: auto;
+  min-height: 70px; }
+
+.references-conainer .reference-item img {
+  width: 80px;
+  margin: auto; }
+
+.reference-item .text-container {
+  display: table;
+  min-height: 71px; }
+
+.reference-item .text-container .text {
+  display: table-cell;
+  vertical-align: middle; }
+
+.reference-item .action-container {
+  display: table;
+  min-height: 70px; }
+
+.reference-item .action-container .icons {
+  display: table-cell;
+  vertical-align: middle; }
+
+.reference-item .action-container .icons .ico {
+  font-size: 30px;
+  padding-left: 10px;
+  cursor: pointer; }

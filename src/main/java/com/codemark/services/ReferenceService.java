@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 public class ReferenceService {
     private String folderPath = "references/";
     public void getAll(){
-    }
+    }    
     
     public void download(Long id, HttpServletResponse response) throws IOException{
          String fileName = "test.pdf";

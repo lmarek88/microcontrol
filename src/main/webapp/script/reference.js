@@ -15,5 +15,4 @@ var _app = _app || {};
     return _app.reference = {
         init: init        
     }
-
-}());
+})();
