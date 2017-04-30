@@ -10,7 +10,7 @@ var _app = _app || {};
             var id = element.data("id");
             setActivePage(id);
         });
-        //$('.navbar-nav li[data-id="main"]').trigger('click');
+        //$('.navbar-nav li[data-id="references"]').trigger('click');
     }
 
     var setActivePage = function (id) {

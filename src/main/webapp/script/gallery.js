@@ -51,13 +51,15 @@ var _app = _app || {};
     
     
     var init = function () {
-        var tempName = "thumbnail";
+        var tempName = "gallery";
         $.when(
-             _app.helper.getTemplate(tempName)
-         ).done(function (data) {
+             _app.helper.getTemplate(tempName),
+             _app.dataProvider.getGallery(),
+             _app.helper.getTemplate("thumbnail")
+         ).done(function (template, data) {
              var temp = $.templates[tempName];
              //var html = $.templates('<div>{{:name}}</div>').render({name:'fdsf'})
-             var html = temp.render({data:images})
+             var html = temp.render(data)
              $('#gallery .thumbnail-conainer').append(html);
              $('.image-thumbnail').click(thumbnailClick);
          });

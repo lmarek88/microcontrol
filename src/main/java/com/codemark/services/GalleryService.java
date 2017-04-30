@@ -5,6 +5,7 @@
  */
 package com.codemark.services;
 
+import com.codemark.domain.ImageCategory;
 import com.codemark.webui.dto.GalleryCategory;
 import com.codemark.webui.dto.GalleryData;
 import com.codemark.webui.dto.Image;
@@ -19,22 +20,32 @@ import org.springframework.stereotype.Service;
 @Service
 public class GalleryService {
     
-    public GalleryData getData(){
+    public GalleryData getGallery(){
         GalleryData result = new GalleryData();
         List<GalleryCategory> categories = new ArrayList<>();
         result.setCategories(categories);
-        categories.add(new GalleryCategory());
+        
+        
+        categories.add(createCategory("Elektronika", ImageCategory.ELECTRONICS.toString()));
+        categories.add(createCategory("Automatyka i budowa maszyn", ImageCategory.AUTOMATION.toString()));
+        categories.add(createCategory("Elektryka, sieci strukturalne i CCTV", ImageCategory.ELECTRICS.toString()));
+        categories.add(createCategory("SAP i DSO", ImageCategory.SAPDSO.toString()));
+                
+        return result;
+    }
+    
+    private GalleryCategory createCategory(String name, String code){
         GalleryCategory category = new GalleryCategory();
         List<Image> images = new ArrayList<>();
-        category.setName("Automatyka");
+        
+        images.add(new Image("Image1", "http://placehold.it/300x250", "To jest extraśny wypaśny obrazek"));
+        images.add(new Image("Image2", "http://placehold.it/300x250", "To jest extraśny wypaś›ny obrazek1"));
+        images.add(new Image("Image3", "http://placehold.it/300x250", "To jest extraśny wypaś›ny obrazek2"));
+        images.add(new Image("Image4", "http://placehold.it/300x250", "To jest extraśny wypaś›ny obraze3"));
+        
         category.setImages(images);
-        images.add(new Image("Image1", "url", "To jest extraśny wypaśny obrazek"));
-        images.add(new Image("Image2", "url", "To jest extraĹ›ny wypaĹ›ny obrazek1"));
-        images.add(new Image("Image3", "url", "To jest extraĹ›ny wypaĹ›ny obrazek2"));
-        images.add(new Image("Image4", "url", "To jest extraĹ›ny wypaĹ›ny obraze3"));
-        
-        categories.add(category);
-        
-        return result;
+        category.setName(name);
+        category.setCode(code);
+        return category;
     }
 }

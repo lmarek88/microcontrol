@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class GalleryCategory {
     private String name;
+    private String code;
     private List<Image> images;
 
     public GalleryCategory() {
@@ -24,6 +25,14 @@ public class GalleryCategory {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public List<Image> getImages() {

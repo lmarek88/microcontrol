@@ -1,0 +1,29 @@
+#slider {
+    height: 200px;
+    max-height: 400px;
+    margin-bottom: 10px;
+    .slick-slide {
+        height: 200px !important;
+        max-height: 400px;
+        outline: none;
+    }
+    .slider-item {
+        text-align: center;
+    }
+    .slider-item .slider-header {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .slider-item img {
+        display: inline-block !important;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 20px;
+    }
+    .slick-prev,
+    .slick-next,
+    .slick-prev:before,
+    .slick-next:before {
+        display: none !important;
+    }
+}

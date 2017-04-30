@@ -22,27 +22,26 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Lukasz
  */
 @RestController
-
+@RequestMapping(value = "/api/reference")
 public class ReferenceController {
 
     @Autowired
     ReferenceService referenceService;
-    
-    @RequestMapping(value = "", method = RequestMethod.GET)
+
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> getAll() {
-        referenceService.getAll();
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(referenceService.getAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/reference/download/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/download/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> download(@PathVariable long id, HttpServletResponse response) throws IOException {
         referenceService.download(id, response);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/reference/preview/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/preview/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> preview(@PathVariable Long id, HttpServletResponse response) throws IOException {
-        referenceService.preview(id ,response);        
+        referenceService.preview(id, response);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

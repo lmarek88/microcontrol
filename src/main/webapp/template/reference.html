@@ -1,0 +1,14 @@
+{{for #data}}
+<div class="row">
+    <div class="col-xs-2"><img src="./style/images/pdf.png" class="img-responsive" /></div>
+    <div class="col-xs-8 text">
+        <span>{{:description}}</span>
+    </div>
+    <div class="col-xs-2 action-container">
+        <div class="icons text-primary">
+            <span class="preview ico glyphicon glyphicon-search" data-id="{{:id}}"></span>
+            <span class="download ico glyphicon glyphicon-download" data-id="{{:id}}"></span></div>
+    </div>
+</div>
+<hr/>
+{{/for}}

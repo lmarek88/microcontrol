@@ -18,13 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Lukasz
  */
 @RestController
+@RequestMapping(value = "/api/gallery")
 public class GalleryController {
     
     @Autowired
     GalleryService galleryService;
     
-    @RequestMapping(value="/gallery/getData" ,method = RequestMethod.GET)
-    public ResponseEntity<?> getGalleryData(){
-        return new ResponseEntity<>(galleryService.getData(), HttpStatus.OK);
+    @RequestMapping(value = "/tt", method = RequestMethod.GET)
+    public ResponseEntity<?> getGallery(){
+        return new ResponseEntity<>(galleryService.getGallery(), HttpStatus.OK);
     }
 }
