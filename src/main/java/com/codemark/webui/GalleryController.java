@@ -24,7 +24,7 @@ public class GalleryController {
     @Autowired
     GalleryService galleryService;
     
-    @RequestMapping(value = "/tt", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public ResponseEntity<?> getGallery(){
         return new ResponseEntity<>(galleryService.getGallery(), HttpStatus.OK);
     }
