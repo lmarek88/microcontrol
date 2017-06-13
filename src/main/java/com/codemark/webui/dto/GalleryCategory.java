@@ -14,7 +14,7 @@ import java.util.List;
 public class GalleryCategory {
     private String name;
     private String code;
-    private List<Image> images;
+    private List<ImageDto> images;
 
     public GalleryCategory() {
     }
@@ -35,11 +35,11 @@ public class GalleryCategory {
         this.code = code;
     }
 
-    public List<Image> getImages() {
+    public List<ImageDto> getImages() {
         return images;
     }
 
-    public void setImages(List<Image> images) {
+    public void setImages(List<ImageDto> images) {
         this.images = images;
     }
     

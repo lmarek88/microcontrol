@@ -5,7 +5,7 @@
  */
 package com.codemark.services;
 
-import com.codemark.webui.dto.Reference;
+import com.codemark.webui.dto.ReferenceDto;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,10 +24,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ReferenceService {
     private final String folderPath = "references/";
-    public List<Reference> getAll(){
-        List<Reference> result = new ArrayList<>();
-        result.add(new Reference(1, "Referencja - CODEMARK Programowanie i Automatyka Łukasz Marek", "pdf"));
-        result.add(new Reference(2, "Referencja - Inna Firma", "pdf"));        
+    public List<ReferenceDto> getAll(){
+        List<ReferenceDto> result = new ArrayList<>();
+        result.add(new ReferenceDto(1, "Referencja - CODEMARK Programowanie i Automatyka Łukasz Marek", "pdf"));
+        result.add(new ReferenceDto(2, "Referencja - Inna Firma", "pdf"));        
         return result;
     }    
     

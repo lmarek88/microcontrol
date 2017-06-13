@@ -1,0 +1,11 @@
+{{for categories}}
+     {{for images }}
+        <div class="item" data-image="{{:imageId}}">
+            <img src="./api/image/thumbnail/{{:imageId}}" alt="slide">
+            <div class="carousel-caption">
+                <h3>{{:name}}</h3>
+                <p>{{:description}}.</p>
+            </div>
+        </div>
+    {{/for}} 
+{{/for}}

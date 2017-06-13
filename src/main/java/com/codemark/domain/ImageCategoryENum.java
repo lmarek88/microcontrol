@@ -9,7 +9,7 @@ package com.codemark.domain;
  *
  * @author Lukasz
  */
-public enum ImageCategory {
+public enum ImageCategoryENum {
     ELECTRONICS,
     AUTOMATION,
     ELECTRICS,

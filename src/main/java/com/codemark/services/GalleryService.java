@@ -5,12 +5,28 @@
  */
 package com.codemark.services;
 
-import com.codemark.domain.ImageCategory;
+import com.codemark.domain.ImageCategoryENum;
+import com.codemark.domain.category.CategoryRepository;
+import com.codemark.domain.category.ImageCategory;
+import com.codemark.domain.image.ImageRepository;
+import com.codemark.domain.image.model.Image;
+import com.codemark.domain.image.model.ImageData;
+import com.codemark.domain.image.model.ImageDataThumbnail;
 import com.codemark.webui.dto.GalleryCategory;
 import com.codemark.webui.dto.GalleryData;
-import com.codemark.webui.dto.Image;
+import com.codemark.webui.dto.ImageDto;
+import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImageOp;
+import java.awt.image.DataBufferByte;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import javax.imageio.ImageIO;
+import org.imgscalr.Scalr;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,33 +35,56 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class GalleryService {
-    
-    public GalleryData getGallery(){
+
+    @Autowired
+    ImageRepository imageRepository;
+
+    @Autowired
+    CategoryRepository categoryRepository;
+
+    public void add(byte[] image, String name, String description, Long categoryId) throws IOException {
+        if (image == null || image.length == 0) {
+            return;
+        }
+        Image entity = new Image();
+        entity.setActive(true);
+        entity.setCategory(categoryRepository.findOne(categoryId));
+        entity.setDescription(description);
+        entity.setName(name);
+        entity.setImageData(new ImageData(image));
+        entity.setThumbnail(new ImageDataThumbnail(convertToThumbnail(image)));
+        entity = imageRepository.save(entity);
+        entity.getId();
+    }
+
+    public GalleryData getGallery() {
         GalleryData result = new GalleryData();
         List<GalleryCategory> categories = new ArrayList<>();
         result.setCategories(categories);
-        
-        
-        categories.add(createCategory("Elektronika", ImageCategory.ELECTRONICS.toString()));
-        categories.add(createCategory("Automatyka i budowa maszyn", ImageCategory.AUTOMATION.toString()));
-        categories.add(createCategory("Elektryka, sieci strukturalne i CCTV", ImageCategory.ELECTRICS.toString()));
-        categories.add(createCategory("SAP i DSO", ImageCategory.SAPDSO.toString()));
-                
+
+        List<Image> entities = imageRepository.findAll();
+        List<ImageCategory> categoriesEntity = categoryRepository.findAll();
+        for (ImageCategory c : categoriesEntity) {
+            GalleryCategory gCategory = new GalleryCategory();
+            gCategory.setCode(c.getCode());
+            gCategory.setName(c.getName());
+            List<Image> gImages = entities.stream().filter(x -> x.getCategory().getId().equals(c.getId())).collect(Collectors.toList());
+            gCategory.setImages(gImages.stream().map(this::map).collect(Collectors.toList()));
+            categories.add(gCategory);
+        }
+
         return result;
     }
-    
-    private GalleryCategory createCategory(String name, String code){
-        GalleryCategory category = new GalleryCategory();
-        List<Image> images = new ArrayList<>();
-        
-        images.add(new Image("Image1", "http://placehold.it/300x250", "To jest extraśny wypaśny obrazek"));
-        images.add(new Image("Image2", "http://placehold.it/300x250", "To jest extraśny wypaś›ny obrazek1"));
-        images.add(new Image("Image3", "http://placehold.it/300x250", "To jest extraśny wypaś›ny obrazek2"));
-        images.add(new Image("Image4", "http://placehold.it/300x250", "To jest extraśny wypaś›ny obraze3"));
-        
-        category.setImages(images);
-        category.setName(name);
-        category.setCode(code);
-        return category;
+
+    private ImageDto map(Image image) {
+        ImageDto result = new ImageDto(image.getName(), image.getId(), image.getDescription());
+        return result;
     }
+
+    private byte[] convertToThumbnail(byte[] image) throws IOException {
+        BufferedImage buffer = ImageIO.read(new ByteArrayInputStream(image));
+        BufferedImage convertedImage = Scalr.resize(buffer, 280, 200, (BufferedImageOp) null);
+        return ((DataBufferByte) convertedImage.getRaster().getDataBuffer()).getData();
+    }
+
 }

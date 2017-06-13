@@ -23,6 +23,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                 <a class="navbar-brand" href="#">
                     <img src="./style/images/logo-mini.png" />
@@ -35,6 +36,7 @@
                     <li class="" data-id="gallery"><a href="#">Galeria</a></li>
                     <li class="" data-id="references"><a href="#">Referencje</a></li>
                     <li class="" data-id="contact"><a href="#">Kontakt</a></li>
+                    <li class="" data-id="upload"><a href="#">Test</a></li>
 
                 </ul>
             </div>
@@ -46,7 +48,7 @@
         <div class="container zone-content">
             <div id="loader"></div>
             <div class="row screen" id="main">
-                <div class="col-lg-12 main-container">                    
+                <div class="col-lg-12 main-container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel-body">
@@ -59,21 +61,6 @@
                                     zróżnicowanych projektów pozwala nam na taki dobór osprzętu i materiałów aby zrównoważyć
                                     koszty i jakość.
                                 </p>
-                                <!--Nasza firma zajmuje się
-                                <ul>
-                                    <li>Działalność związana z doradztwem w zakresie informatyki</li>
-                                    <li>instalacje telekomunikacyjne,</li>
-                                    <li>strukturalne sieci komputerowe i instalacje dla telewizji kablowej,włącznie ze światłowodami,</li>
-                                    <li>instalacje anten satelitarnych,</li>
-                                    <li>instalacje oświetleniowe, włączając oświetlenie ulic, sygnalizację świetlną oraz oświetlenie
-                                        pasów startowych,</li>
-                                    <li>instalacje alarmowe: przeciwpożarowe, przeciwwłamaniowe itp.,</li>
-                                    <li>instalacje dla elektrycznych urządzeń i sprzętu gospodarstwa domowego, włączając ogrzewanie
-                                        podłogowe.
-                                    </li>
-                                    <li>pisanie, modyfikowanie, badanie, dokumentowanie i wspomaganie oprogramowania, włączając
-                                        pisanie zleceń sterujących programami dla użytkowników</li>
-                                </ul>-->
                             </div>
                         </div>
                     </div>
@@ -141,6 +128,29 @@
             <div class="row screen" id="references">
                 <div class="col-xs-12">
                     <div class="reference-container">
+                    </div>
+                </div>
+            </div>
+            <div class="row screen" id="upload">
+                <div class="col-lg-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-xs-12">
+                            <form method="POST" action="/api/gallery" enctype="multipart/form-data">
+                                <div class="form-group">                                    
+                                    <input type="text" class="form-control" name="name" placeholder="Nazwa">
+                                </div>
+                                <div class="form-group">                                    
+                                    <input type="text" class="form-control" name="description" placeholder="Opis">
+                                </div>
+                                <div class="form-group">                                    
+                                    <input type="text" class="form-control" name="categoryId" placeholder="Kategoria">
+                                </div>
+                                <div class="form-group">                                    
+                                    <input type="file" name="file">                                    
+                                </div>                                
+                                <button type="submit" class="btn btn-default">Zapisz</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -212,14 +222,11 @@
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="modal-body">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-
-
+                        <div id="carousel-example-generic" class="carousel slide" >
                             <div class="carousel-inner">
 
                                 <div class="item active">
-                                    <img src="http://placehold.it/400x375/3498db/2980b9" alt="First slide">
+                                    <img data-lazy-load-src="http://placehold.it/400x375/3498db/2980b9" alt="First slide">
                                     <div class="carousel-caption">
                                         <h3>First slide</h3>
                                         <p>Nsulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -227,7 +234,7 @@
                                 </div>
 
                                 <div class="item">
-                                    <img src="http://placehold.it/600x375/9b59b6/8e44ad" alt="Second slide">
+                                    <img data-lazy-load-src="http://placehold.it/600x375/9b59b6/8e44ad" alt="Second slide">
                                     <div class="carousel-caption">
                                         <h3>Second slide</h3>
                                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -235,7 +242,7 @@
                                 </div>
 
                                 <div class="item">
-                                    <img src="http://placehold.it/600x375/34495e/2c3e50" alt="Third slide">
+                                    <img data-lazy-load-src="http://placehold.it/600x375/34495e/2c3e50" alt="Third slide">
                                     <div class="carousel-caption">
                                         <h3>Third slide</h3>
                                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -243,7 +250,7 @@
                                 </div>
 
                                 <div class="item">
-                                    <img src="http://placehold.it/600x375/222222/999999" alt="Third slide">
+                                    <img data-lazy-load-src="http://placehold.it/600x375/222222/999999" alt="Third slide">
                                     <div class="carousel-caption">
                                         <h3>4 slide</h3>
                                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

@@ -9,16 +9,16 @@ package com.codemark.webui.dto;
  *
  * @author Lukasz
  */
-public class Reference {
+public class ReferenceDto {
 
     private long id;
     private String description;
     private String type;
 
-    public Reference() {
+    public ReferenceDto() {
     }
 
-    public Reference(long id, String description, String type) {
+    public ReferenceDto(long id, String description, String type) {
         this.id = id;
         this.description = description;
         this.type = type;
